@@ -1,0 +1,14 @@
+unsigned long readNext;
+ 
+void setup() {
+// put your setup code here, to run once:
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (millis() - readNext >= 1000) { 
+    Serial.println(analogRead(A0));
+    readNext=millis();
+}
+}
